@@ -1,0 +1,148 @@
+$dark-bg: #141414;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans';
+  background-color: $dark-bg;
+}
+
+.section-title {
+  font-size: 23px;
+  font-weight: bold;
+  color: #fff;
+  padding: 0 40px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 40px;
+  min-height: 220px;
+
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  & > div {
+    img {
+      width: 300px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: transform 750ms;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+
+// Site header
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: $dark-bg;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100px;
+      margin-right: 16px;
+    }
+
+    a {
+      transition: color 0.2s ease-in;
+
+      &.active {
+        font-weight: 600;
+      }
+
+      &:hover:not(.active) {
+        color: #b3b3b3;
+        transition: color 0.2s ease-in;
+      }
+    }
+  }
+
+  .secondary-nav {
+    display: flex;
+    align-items: center;
+
+    img:not(.user-avatar) {
+      width: 18px;
+    }
+  }
+}
+
+// Site hero
+.site-hero {
+  position: relative;
+  height: calc(100vh - 110px);
+  overflow: hidden;
+  background: url('../images/avenger.jpg');
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  &-description {
+    color: #fff;
+    width: 40%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    background-image: linear-gradient(77deg,#000 0,rgba(0,0,0,0) 92%);
+    text-shadow: 0px 2px 6px black;
+    
+    span {
+      color: red;
+    }
+    h1 {
+      font-size: 45px;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 23px;
+    }
+  }
+
+  .popular-movies {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.movies-list {
+  margin-top: 32px;
+}
